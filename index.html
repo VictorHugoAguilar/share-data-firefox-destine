@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>SENDA</title>
+  </head>
+  <body>
+    <h1>DESTIONO: SENDA</h1>
+    <h2>Variable: <span id="value"></span></h2>
+
+    <script>
+      window.addEventListener('load', () => {
+        // const valueSended = window.puki || 'NO HAY NADA AÚN';
+        // const valueForSaved = document.getElementById('value');
+        // valueForSaved.textContent = valueSended;
+
+        window.addEventListener('message', (event) => {
+          const datos = event.data;
+          document.getElementById(
+            'value'
+          ).textContent = `Nombre: ${datos.nombre}, Edad: ${datos.edad}`;
+        });
+      });
+
+      window.addEventListener('message', (event) => {
+        const datos = event.data;
+        document.getElementById(
+          'value'
+        ).textContent = `Nombre: ${datos.nombre}, Edad: ${datos.edad}`;
+      });
+    </script>
+  </body>
+</html>
